@@ -9,7 +9,8 @@ st.write("Python executable:", sys.executable)
 st.write("Python version:", sys.version)
 
 # == Load Model ==
-model_path = "model.joblib"
+model_path = os.path.join(os.path.dirname(__file__), "model.joblib")
+model = joblib.load(model_path)
 
 if not os.path.exists(model_path):
     st.error(f"Model not found at {model_path}")
