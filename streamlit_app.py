@@ -9,7 +9,7 @@ st.write("Python executable:", sys.executable)
 st.write("Python version:", sys.version)
 
 # == Load Model ==
-model_path = "/Users/dugiyadi/Documents/JCDS-2702/PORTOFOLIO/PORTOFOLIO 3/model.joblib"
+model_path = "model.joblib"
 
 if not os.path.exists(model_path):
     st.error(f"Model not found at {model_path}")
