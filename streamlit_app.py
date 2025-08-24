@@ -14,14 +14,13 @@ model = joblib.load(model_path)
 
 if not os.path.exists(model_path):
     st.error(f"Model not found at {model_path}")
-    st.stop()  # Stop app if model doesn't exist
+    st.stop()  
 else:
     model = joblib.load(model_path)
     st.success("Model loaded successfully!")
 
 # == Prediction Function ==
 def get_prediction(data: pd.DataFrame):
-    # Ensure numeric columns are numeric
     numeric_cols = ["CreditScore", "Age", "Tenure", "Balance", 
                     "NumOfProducts", "HasCrCard", "IsActiveMember", "EstimatedSalary"]
     data[numeric_cols] = data[numeric_cols].apply(pd.to_numeric, errors='coerce').fillna(0)
